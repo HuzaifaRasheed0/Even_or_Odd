@@ -5,36 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Identifying Number</title>
+    <title>Checking Even/Odd</title>
 </head>
+<link rel="stylesheet" href="app.js">
 <body>
-    
-    <h2 style="text-align:center;">EVEN or ODD </h2>
-    <label>Enter Your Number   </label>   <br/>
-    <input type="number" name="" id="oddeven" 
-    onkeyup="isCheck()"><span id="showmsg"></span>
+    <center>
+        <h3>Even Or Odd</h3>
+    <form onsubmit="doEven(); return false">
+        <input type="number" name="" id="num1">
+        <!-- <input type="number" name="" id="num2" /> -->
+        <button type="submit">result</button>
+      </form>
+      <h3 id="show"> </h3>
+    </center>
+      <script>
+        alert( "Welcome To Even Or Odd Number Checker!" );
+        function doEven() {
+            let num1 = +document.querySelector('#num1').value
+            // let num2 = +document.querySelector('#num2').value
+            let show = document.querySelector('#show')
+            let result = num1%2
+            console.log(result);
+            // console.log(num1%2);
+            if (result) {
+                show.innerHTML = num1 + ' is odd number'
 
-    <script>
-
-        function isCheck(){
-            let num = document.getElementById("oddeven").value;
-            if((num % 2) === 0){
-                document.getElementById("showmsg").
-            innerHTML = "Oh ! this Number "+num+" is an even number";       
-            }        
-            else{
-                document.getElementById("showmsg").
-            innerHTML = "Oh No! this Number "+num+" is not an even number";
+            } else {
+                show.innerHTML = num1 + ' is Even number'
             }
-
-            if (num == ""){
-                document.getElementById("showmsg").
-            innerHTML = "";
-            }
-
         }
-
     </script>
+
+
+
 </body>
 </html>
-
