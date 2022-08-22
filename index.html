@@ -1,44 +1,40 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Identifying Number</title>
 </head>
-
 <body>
-    <h1>EVEN or ODD </h1>
-    <form onsubmit="findEvenOdd(); return false">
-        Enter your number:
-
-        <input type="number" name="num" id="num" min="0">
-
-
-        <br>
-        <button type="submit" onclick="findEvenOdd">check</button>
-    </form>
-    <h3 id="result"> </h3>
+    
+    <h2 style="text-align:center;">EVEN or ODD </h2>
+    <label>Enter Your Number   </label>   <br/>
+    <input type="number" name="" id="oddeven" 
+    onkeyup="isCheck()"><span id="showmsg"></span>
 
     <script>
-        function findEvenOdd(){
-            let num = document.getElementById("num").value
 
-        
-            if (num % 2 == 0){
-                document.getElementById("result").innerHTML = num + "   is Even Number";
+        function isCheck(){
+            let num = document.getElementById("oddeven").value;
+            if((num % 2) === 0){
+                document.getElementById("showmsg").
+            innerHTML = "Oh ! this Number "+num+" is an even number";       
+            }        
+            else{
+                document.getElementById("showmsg").
+            innerHTML = "Oh No! this Number "+num+" is not an even number";
             }
 
-            else
-            {
+            if (num == ""){
+                document.getElementById("showmsg").
+            innerHTML = "";
+            }
 
-            
-                document.getElementById("result").innerHTML = num + "   is Odd Number";
-            }}
-        
+        }
+
     </script>
 </body>
-
 </html>
+
